@@ -70,12 +70,12 @@ export function initWarp() {
       star.update();
       star.draw();
     }
+    if (raf) cancelAnimationFrame(raf);
     if (!reduceMotion) raf = requestAnimationFrame(draw);
   }
 
   window.addEventListener('resize', resize);
   init();
 
-  // Экспортируем функцию перерисовки для смены темы
   return { redraw: draw };
 }
