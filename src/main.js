@@ -1,6 +1,7 @@
 import './style.scss';
 
 import { mountOrbitalScene } from './js/orbital-scene.js';
+import { initCameraControls } from './js/camera.js';
 import { initWarp } from './js/warp.js';
 import { initTheme } from './js/theme.js';
 import { initUI } from './js/ui.js';
@@ -8,6 +9,7 @@ import { initUI } from './js/ui.js';
 document.addEventListener('DOMContentLoaded', () => {
   const warp = initWarp();
   mountOrbitalScene(document.getElementById('orbital-planes'));
+  initCameraControls();
   initTheme(warp.redraw);
   initUI();
 });
